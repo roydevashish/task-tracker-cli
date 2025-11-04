@@ -10,6 +10,15 @@ private:
 public:
   void Execute(int arg_c, char *arg_v[])
   {
-    cout << "update called" << endl;
+    if (arg_c != 4)
+    {
+      cout << "error: invalid input" << endl;
+      exit(EXIT_FAILURE);
+    }
+
+    int task_id = atoi(arg_v[2]);
+    char *task_description = arg_v[3];
+
+    cout << "task updated successfully with task id: " << task_id << endl;
   }
 };
