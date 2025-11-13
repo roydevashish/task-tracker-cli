@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 using namespace std;
@@ -38,7 +39,22 @@ TASK_STATUS TaskStatusStringToEnum(char *task_status)
   {
     return DONE;
   }
-  
+
   cout << "error: invalid input" << endl;
   exit(EXIT_FAILURE);
+}
+
+TASK_STATUS TaskStatusIntToEnum(int task_status)
+{
+  switch (task_status)
+  {
+  case TODO:
+    return TODO;
+  case INPROGRESS:
+    return INPROGRESS;
+  case DONE:
+    return DONE;
+  default:
+    exit(EXIT_FAILURE);
+  }
 }

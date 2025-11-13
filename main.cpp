@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "cmd_factory/cmd_factory.cpp"
+#include "storage/storage_sqlite.cpp"
 
 using namespace std;
 
@@ -11,6 +12,9 @@ int main(int argc, char *argv[])
     cout << "error: invalid input" << endl;
     exit(EXIT_FAILURE);
   }
+
+  char db_path[] = "database/task_tracker.db";
+  iStorage *storage = SQLite::GetInstance(db_path);
 
   char *input_cmd = argv[1];
 
