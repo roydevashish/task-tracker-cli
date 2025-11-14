@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 
@@ -140,9 +141,9 @@ public:
       const unsigned char *db_task_created_at = sqlite3_column_text(stmt, 3);
       const unsigned char *db_task_updated_at = sqlite3_column_text(stmt, 4);
 
-      char *task_description = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_description));
-      char *task_created_at = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_created_at));
-      char *task_updated_at = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_updated_at));
+      char *task_description = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_description));
+      char *task_created_at = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_created_at));
+      char *task_updated_at = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_updated_at));
 
       task.Set(db_task_id, task_description, TaskStatusIntToEnum(db_task_status), task_created_at, task_updated_at);
     }
@@ -175,9 +176,9 @@ public:
       const unsigned char *db_task_created_at = sqlite3_column_text(stmt, 3);
       const unsigned char *db_task_updated_at = sqlite3_column_text(stmt, 4);
 
-      char *task_description = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_description));
-      char *task_created_at = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_created_at));
-      char *task_updated_at = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_updated_at));
+      char *task_description = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_description));
+      char *task_created_at = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_created_at));
+      char *task_updated_at = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_updated_at));
 
       output.push_back(Task(task_id, task_description, TaskStatusIntToEnum(task_status), task_created_at, task_updated_at));
     }
@@ -213,9 +214,9 @@ public:
       const unsigned char *db_task_created_at = sqlite3_column_text(stmt, 3);
       const unsigned char *db_task_updated_at = sqlite3_column_text(stmt, 4);
 
-      char *task_description = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_description));
-      char *task_created_at = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_created_at));
-      char *task_updated_at = reinterpret_cast<char*>(const_cast<unsigned char*>(db_task_updated_at));
+      char *task_description = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_description));
+      char *task_created_at = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_created_at));
+      char *task_updated_at = reinterpret_cast<char *>(const_cast<unsigned char *>(db_task_updated_at));
 
       output.push_back(Task(task_id, task_description, TaskStatusIntToEnum(task_status), task_created_at, task_updated_at));
     }

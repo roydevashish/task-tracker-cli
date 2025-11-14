@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
   char *input_cmd = argv[1];
 
   CMDFactory cmd_factory;
-  iCMD *cmd = cmd_factory.CreateCMD(input_cmd);
+  iCMD *cmd = cmd_factory.CreateCMD(input_cmd, storage);
   if (cmd == nullptr)
   {
     exit(EXIT_FAILURE);

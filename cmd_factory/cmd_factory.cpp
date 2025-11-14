@@ -13,13 +13,13 @@ class CMDFactory
 {
 private:
 public:
-  iCMD *CreateCMD(char *input_cmd)
+  iCMD *CreateCMD(char *input_cmd, iStorage *storage)
   {
     iCMD *cmd = nullptr;
 
     if (!strcmp(input_cmd, "add"))
     {
-      CMDAdd cmd_add;
+      CMDAdd cmd_add(storage);
       cmd = &cmd_add;
     }
     else if (!strcmp(input_cmd, "update"))
