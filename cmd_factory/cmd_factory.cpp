@@ -24,7 +24,7 @@ public:
     }
     else if (!strcmp(input_cmd, "update"))
     {
-      CMDUpdate cmd_update;
+      CMDUpdate cmd_update(storage);
       cmd = &cmd_update;
     }
     else if (!strcmp(input_cmd, "delete"))
