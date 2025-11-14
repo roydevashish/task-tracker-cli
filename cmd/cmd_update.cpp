@@ -26,11 +26,11 @@ public:
     int task_id = atoi(arg_v[2]);
     char *task_description = arg_v[3];
     Task task = m_storage->UpdateTaskDescription(task_id, task_description);
-		if (task.GetId() < 0)
-		{
+    if (task.GetId() < 0)
+    {
       cout << "error: unable to update task" << endl;
-			exit(EXIT_FAILURE);
-		}
+      exit(EXIT_FAILURE);
+    }
     cout << "task updated successfully with task id: " << task_id << endl;
     task.Print();
   }

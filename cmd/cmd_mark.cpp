@@ -26,11 +26,11 @@ public:
     TASK_STATUS task_status = TaskStatusStringToEnum(arg_v[2]);
     int task_id = atoi(arg_v[3]);
     Task task = m_storage->UpdateTaskStatus(task_id, task_status);
-		if (task.GetId() < 0)
-		{
+    if (task.GetId() < 0)
+    {
       cout << "error: unable to mark task" << endl;
-			exit(EXIT_FAILURE);
-		}
+      exit(EXIT_FAILURE);
+    }
     cout << "task marked: " << task_status << " successfully with task id: " << task_id << endl;
     task.Print();
   }
