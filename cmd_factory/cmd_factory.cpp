@@ -29,7 +29,7 @@ public:
     }
     else if (!strcmp(input_cmd, "delete"))
     {
-      CMDDelete cmd_delete;
+      CMDDelete cmd_delete(storage);
       cmd = &cmd_delete;
     }
     else if (!strcmp(input_cmd, "mark"))
