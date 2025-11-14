@@ -34,7 +34,7 @@ public:
     }
     else if (!strcmp(input_cmd, "mark"))
     {
-      CMDMark cmd_mark;
+      CMDMark cmd_mark(storage);
       cmd = &cmd_mark;
     }
     else if (!strcmp(input_cmd, "list"))
