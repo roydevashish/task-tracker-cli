@@ -39,7 +39,7 @@ public:
     }
     else if (!strcmp(input_cmd, "list"))
     {
-      CMDList cmd_list;
+      CMDList cmd_list(storage);
       cmd = &cmd_list;
     }
     else

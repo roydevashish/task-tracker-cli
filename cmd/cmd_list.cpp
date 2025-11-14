@@ -7,7 +7,14 @@ using namespace std;
 class CMDList : public iCMD
 {
 private:
+  iStorage *m_storage = nullptr;
+
 public:
+  CMDList(iStorage *storage)
+  {
+    m_storage = storage;
+  }
+
   void Execute(int arg_c, char *arg_v[])
   {
     if (arg_c < 2 && arg_c > 3)
@@ -18,15 +25,21 @@ public:
 
     if (arg_c == 2)
     {
-      cout << "list of all tasks" << endl;
-      exit(EXIT_SUCCESS);
+      vector<Task> tasks = m_storage->GetAllTasks();
+      for (auto task : tasks)
+      {
+        task.Print();
+      }
     }
 
     if (arg_c == 3)
     {
       TASK_STATUS task_status = TaskStatusStringToEnum(arg_v[2]);
-      cout << "list of all tasks with task status: " << TaskStatusEnumToString(task_status) << endl;
-      exit(EXIT_SUCCESS);
+      vector<Task> tasks = m_storage->GetTasksByTaskStatus(task_status);
+      for (auto task : tasks)
+      {
+        task.Print();
+      }
     }
   }
 };
